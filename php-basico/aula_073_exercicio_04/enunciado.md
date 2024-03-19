@@ -5,6 +5,7 @@ um campo de texto e um botão de submissão.
 O formulário, quando submetido, será tratado pelo mesmo ficheiro index.php.
 
 No tratamento dos texto submetido, devem ser observadas as seguintes regras:
+
 1. Se o campo de texto vier vazio, o sistema deve apresentar o erro:
 "Campo de texto vazio"
 2. Se o campo de texto tiver um valor numérico, deve guardar esse valor

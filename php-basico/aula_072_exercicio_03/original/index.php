@@ -1,6 +1,26 @@
 <?php
+function divisao($a, $b)
+{
 
-// criar a função aqui ...
+    /*
+    if($b == 0){
+        $resultado = null;
+        return "Divisão por Zero";
+    }else{
+        $resultado = $a / $b;
+        return $resultado;
+    }
+    */
+
+    //Refazendo com try/catch
+
+    try {
+        return $a/$b;
+    } catch (\Throwable $th) {
+        return null;
+    }    
+
+}
 
 ?>
 
@@ -21,9 +41,12 @@
         <?php 
             $valor1 = rand(0,10);
             $valor2 = rand(0,10);
+            $resultado = divisao($valor1, $valor2);
+
         ?>
 
         <!-- apresentar os valores aqui -->
+        <div>  <?=  "$valor1 : $valor2 = ". ($resultado === null ? 'Divisão por zero' : $resultado) ?></div>
 
     <?php endfor; ?>
 

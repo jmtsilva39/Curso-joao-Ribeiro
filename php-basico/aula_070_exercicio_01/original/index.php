@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    $erro = !empty($_SESSION['erro']) ? $_SESSION['erro'] : '';
+    unset($_SESSION['erro']);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,13 +32,18 @@
     <div class="wrapper">
         <form action="tratamento.php" method="post">
             <label>Valor 1</label>
-            <input type="text" name="text_valor_1">
+            <h6> </h6>
+            <input type="text" name="usuario">
             <label>Valor 2</label>
-            <input type="text" name="text_valor_2">
+            <input type="text" name="senha">
             <input type="submit" value="Executar">
         </form>
     </div>
 
+    <?php if(!empty($erro)) : ?>
+    <div style="color: red;"><?=$erro?></div>
+    <?php endif; ?>
+
 </body>
 
-</html>
+
