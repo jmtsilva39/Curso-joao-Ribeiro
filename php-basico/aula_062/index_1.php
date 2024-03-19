@@ -55,7 +55,7 @@ Vamos analisar o seguinte formulário de login
 
     <div class="wrapper">
         <h3>LOGIN</h3>
-        <form action="submissao_1.php" method="post">
+        <form action="submissao_2.php" method="post">
             <label>Username</label>
             <input type="text" name="text_username">
             <label>Password</label>
