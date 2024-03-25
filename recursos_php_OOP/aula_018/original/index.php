@@ -30,20 +30,64 @@
          f ou F = feminino
          outros... desconhecido
 */
+require_once('humanos.php');
 
 $dados = [
-    ['m', 'João Ribeiro'],
-    ['f', 'Ana Silva'],
-    ['M', 'Carlos Martins'],
-    ['m', 'Joaquim Santos'],
-    ['f', 'Marta Rodrigues'],
-    ['M', 'Rui Fernandes'],
-    ['F', 'Márcia Antunes'],
-    ['g', 'Pantufa'],
-    ['f', 'Carla Maria'],
-    ['M', 'Fernando Joaquim'],
-    ['m', 'Ricardo Moita'],
-    ['c', 'Lassie'],
-    ['F', 'Daniela Cardoso'],
-    ['F', 'Susana Dinis'],
+   ['m', 'João Ribeiro'],
+   ['f', 'Ana Silva'],
+   ['M', 'Carlos Martins'],
+   ['m', 'Joaquim Santos'],
+   ['f', 'Marta Rodrigues'],
+   ['M', 'Rui Fernandes'],
+   ['F', 'Márcia Antunes'],
+   ['g', 'Pantufa'],
+   ['f', 'Carla Maria'],
+   ['M', 'Fernando Joaquim'],
+   ['m', 'Ricardo Moita'],
+   ['c', 'Lassie'],
+   ['F', 'Daniela Cardoso'],
+   ['F', 'Susana Dinis'],
 ];
+
+
+$humanos = new Humanos();
+
+foreach ($dados as $dado) {
+   $humanos->definir($dado[0], $dado[1]);
+}
+
+$masculinos = $humanos->getMasculinos();
+$femininos = $humanos->getFemininos();
+$desconhecidos = $humanos->getDesconhecidos();
+?>
+
+
+<h1>MASCULINOS</h1>
+
+
+<ul>
+   <?php foreach ($masculinos as $nome) : ?>
+      <li><?= $nome ?></li>
+   <?php endforeach; ?>
+
+</ul>
+
+<h1>Femininos</h1>
+
+
+<ul>
+   <?php foreach ($femininos as $nome) : ?>
+      <li><?= $nome ?></li>
+   <?php endforeach; ?>
+
+</ul>
+
+<h1>Desconhecidos</h1>
+
+
+<ul>
+   <?php foreach ($desconhecidos as $nome) : ?>
+      <li><?= $nome ?></li>
+   <?php endforeach; ?>
+
+</ul>

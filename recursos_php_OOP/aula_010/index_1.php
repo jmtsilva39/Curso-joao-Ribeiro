@@ -2,6 +2,8 @@
 
 // CLASSES ABSTRATAS
 
+//O que são classes abstratas ?
+
 /* 
 Um outro conceito muito importante na Programação Orientada a Objetos
 é o conceito de classes abstratas.

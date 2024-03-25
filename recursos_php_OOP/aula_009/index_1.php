@@ -3,11 +3,11 @@
 // IMPEDIR HERANÇA DE CLASSE OU MÉTODO
 
 /* 
-Imagina que vais criar um bloco de código que vai ser usado
-por outro programador. Vais querer que a estrutura da tua classe
-contenha mecanismos que impessam determinado tipo de ações.
-Por exemplo, podes querer que uma determinada classe não possa ser
-herdada por outra. Ou simplesmente, um determinado método dessa classe
+    Imagina que vais criar um bloco de código que vai ser usado por outro programador.
+    Vais querer que a estrutura da tua classe
+    contenha mecanismos que impessam determinado tipo de ações.
+    Por exemplo, podes querer que uma determinada classe não possa ser herdada por outra. 
+    Ou simplesmente, um determinado método dessa classe
 não deverá poder ser sobreposto (override) por outro dentro da classe 'filha'
 
 Vejamos como alcançar esse resultado.

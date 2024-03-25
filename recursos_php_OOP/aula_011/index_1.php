@@ -27,11 +27,15 @@ principais diferenças entre interfaces e classes abstratas:
 
     > Os interfaces não podem conter propriedades. 
       As classes abstratas podem.
+
     > Todos os métodos dos interfaces são public.
       Nas classes abstratas, são public ou protected
+
     > Todos os métodos dos interfaces são abstratos por natureza.
       Não podem ter implementação dentro do interface.
+
       O uso do termo abstract não é necessário. Está implícito.
+      
     > As classes podem implementar um interface e herdar de outra classe
       ao mesmo tempo.
 */

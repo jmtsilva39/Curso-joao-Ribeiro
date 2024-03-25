@@ -2,7 +2,7 @@
 
 // HEREDITARIEDADE
 
-// vejamos os conceitos num exemplo mais prático
+// Vejamos os conceitos num exemplo mais prático
 
 class Animal_de_estimacao
 {
@@ -50,6 +50,8 @@ echo $gato->miar(10);
 /* 
 Observa que, na classe Animal_de_estimação, as propriedades
 foram definidas com o access modifier PROTECTED.
+
+
 Já tinha referido que no caso do PROTECTED, a propriedade ou método
 pode ser acedida dentro da classe e dentro de classes derivadas dela.
 */

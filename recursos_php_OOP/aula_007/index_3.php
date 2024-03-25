@@ -28,7 +28,7 @@ class Cliente {
 $clientes = [
     new Cliente('joao', 'joao@gmail.com'),
     new Cliente('ana', 'ana@gmail.com'),
-    new Cliente('carlos', 'carlos@gmail.com')
+    new Cliente('carlos', 'carlos@gmail. com')
 ];
 
 echo '<pre>';
