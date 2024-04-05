@@ -1,5 +1,47 @@
 <?php
+
+use sys4soft\Database;
+
 require_once('header.php');
+
+require_once('config.php');
+require_once('libraries/Database.php');
+
+$erro = null;
+
+//check if there was a post
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+    $database = new Database(MYSQL_CONFIG);
+
+    //get post data
+    $nome = $_POST['text_nome'];
+    $telefone = $_POST['text_telefone'];
+
+    // check if the phone is already registered
+    $params = [
+        ':telefone' => $telefone
+    ];
+    $results = $database->execute_query("SELECT id FROM contato WHERE telefone = :telefone", $params);
+
+    if($results->affected_rows != 0){
+        // there is already another contact with the same phone
+        $erro = "Já existe outro contato com o mesmo telefone";
+    } else {
+        //store the contact in the database
+        $params = [
+            ':nome' => $nome,
+            ':telefone' => $telefone
+        ];
+        $results = $database->execute_non_query("INSERT INTO contato VALUES(0,:nome,:telefone,now(), now())", $params);
+
+        header('location: index.php');
+    }
+
+}
+
+
+
 ?>
 
 <div class="row justify-content-center">
@@ -26,9 +68,12 @@ require_once('header.php');
         </div>
 
         <!-- error message -->
-        <div class="mt-3 alert alert-danger p-2 text-center">
-            mensagem de erro aqui...
-        </div>
+        <?php if (!empty($erro)) : ?>
+            <div class="mt-3 alert alert-danger p-2 text-center">
+                <?= $erro ?>
+            </div>
+        <?php endif; ?>
+
 
     </div>
 </div>
